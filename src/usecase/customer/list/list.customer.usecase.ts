@@ -8,6 +8,7 @@ export default class ListCustomerUseCase{
     constructor(customerRepository: CustomerRepositoryInterface){
         this.customerRepository = customerRepository;
     }
+    
     async execute(input: InputListCustomerDto): Promise<Customer[]>{
         const customers = await this.customerRepository.findAll();
         return customers;
