@@ -1,3 +1,4 @@
+import NotificationError from "../../@shared/notification/notification.error";
 import Address from "../value-object/address";
 import Customer from "./customer";
 
@@ -5,7 +6,13 @@ describe("Customer unit tests", () => {
   it("should throw error when id is empty", () => {
     expect(() => {
       let customer = new Customer("", "John");
-    }).toThrowError("Id is required");
+    }).toThrow(
+       new NotificationError([
+        {
+          context: "customer",  
+          message: "Id is required"
+        }
+      ]));
   });
 
   it("should throw error when name is empty", () => {

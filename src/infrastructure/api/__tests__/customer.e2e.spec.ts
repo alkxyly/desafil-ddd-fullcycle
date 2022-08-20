@@ -67,10 +67,7 @@ describe("E2E test for customer", () => {
     const listResponse = await request(app).get("/customer").send();
 
     expect(listResponse.status).toBe(200);
-    
-    // console.log(listResponse.body);
-    // console.log(listResponse.body.customers);
-    
+   
     // expect(listResponse.body.customers.length).toBe(2);
     // const customer = listResponse.body.customers[0];
     // expect(customer.name).toBe("John");

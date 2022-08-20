@@ -28,7 +28,6 @@ customerRoute.get('/', async (req: Request, res: Response) => {
     const usecase = new ListCustomerUseCase(new CustomerRepository());
     try {
         const output = await usecase.execute({});
-        console.log('out', output);
         res.send(output);
     } catch(err)   {
         res.status(500).send(err);
